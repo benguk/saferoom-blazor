@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using SafeRoom.DAL.Entities;
 using System;
 using System.Collections.Generic;
@@ -7,18 +6,18 @@ using System.Text;
 
 namespace SafeRoom.DAL
 {
-    public class ApplicationDbContext : IdentityDbContext
+    public class ApplicationDbContext : DbContext
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
-            Database.EnsureCreated();
+            //Database.EnsureCreated();
         }
 
         // TODO: Remove. This is for testing and creating the initial DB
         public ApplicationDbContext()
         {
-            Database.EnsureCreated();
+            //Database.EnsureCreated();
         }
 
         // TODO: Remove
