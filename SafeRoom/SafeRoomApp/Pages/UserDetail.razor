@@ -1,0 +1,47 @@
+﻿@page "/userdetail/{UserId}"
+@inherits UserDetailBase
+
+<h1 class="page-title">Details for User @User.UserId</h1>
+
+<div class="col-12 row">
+    <div class="col-10 row">
+        <div class="col-sm-8">
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label">User Id</label>
+                <div class="col-sm-8">
+                    <label typeof="text" class="form-control-plaintext">@User.UserId</label>
+                </div>
+            </div>
+        </div>
+
+        <br />
+
+        <h3>User's chatrooms</h3>
+        @if (Chatrooms == null)
+        {
+            <p><em>Loading...</em></p>
+        }
+        else
+        {
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>RoomId</th>
+                        <th>RoomName</th>
+                        <th>RoomStatus</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var chatroom in Chatrooms)
+                    {
+                    <tr>
+                        <td>@chatroom.ChatroomId</td>
+                        <td>@chatroom.ChatroomName</td>
+                        <td>@chatroom.Status</td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        }
+    </div>
+</div>

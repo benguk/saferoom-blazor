@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29424.173
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SafeRoomApp", "SafeRoomApp\SafeRoomApp.csproj", "{7BD00A48-AD5C-42A2-9A55-6DC2EC41E55B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SafeRoom.DAL", "SafeRoom.DAL\SafeRoom.DAL.csproj", "{789804CE-BE7D-45E6-B0A5-05710152DF72}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SafeRoomApp", "SafeRoomApp\SafeRoomApp.csproj", "{7A9F695A-9004-4A91-99E0-9509C6353AC5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{7BD00A48-AD5C-42A2-9A55-6DC2EC41E55B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7BD00A48-AD5C-42A2-9A55-6DC2EC41E55B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7BD00A48-AD5C-42A2-9A55-6DC2EC41E55B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7BD00A48-AD5C-42A2-9A55-6DC2EC41E55B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{789804CE-BE7D-45E6-B0A5-05710152DF72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{789804CE-BE7D-45E6-B0A5-05710152DF72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{789804CE-BE7D-45E6-B0A5-05710152DF72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{789804CE-BE7D-45E6-B0A5-05710152DF72}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A9F695A-9004-4A91-99E0-9509C6353AC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A9F695A-9004-4A91-99E0-9509C6353AC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A9F695A-9004-4A91-99E0-9509C6353AC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A9F695A-9004-4A91-99E0-9509C6353AC5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
