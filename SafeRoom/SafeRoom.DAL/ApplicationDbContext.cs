@@ -14,18 +14,18 @@ namespace SafeRoom.DAL
             //Database.EnsureCreated();
         }
 
-        // TODO: Remove. This is for testing and creating the initial DB
+        // TODO: Remove // For testing purpose and create DB when running if not using Migration
+        /*
         public ApplicationDbContext()
         {
-            //Database.EnsureCreated();
+            Database.EnsureCreated();
         }
-
-        // TODO: Remove
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=SafeRoomDb;Trusted_Connection=True;MultipleActiveResultSets=true");
             base.OnConfiguring(optionsBuilder);
         }
+        */
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

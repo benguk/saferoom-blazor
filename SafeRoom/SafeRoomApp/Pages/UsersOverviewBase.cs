@@ -16,7 +16,8 @@ namespace SafeRoomApp.Pages
         protected override Task OnInitializedAsync()
         {
             InitializeUsers();
-            var test = new ApplicationDbContext();
+            
+            //var test = new ApplicationDbContext(); // TODO: Remove
 
             return base.OnInitializedAsync();
         }
