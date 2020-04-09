@@ -42,12 +42,21 @@ namespace SafeRoom.DAL
             });
 
             builder.Entity<User>().HasData(
-              new User { UserId = 1, Email = "Email01@test.com" },
-              new User { UserId = 2, Email = "Email02@test.com" }
+              new User { UserId = 1, Email = "kenny@test.com" },
+              new User { UserId = 2, Email = "Email02@test.com" },
+              new User { UserId = 3, Email = "Email03@test.com" }
             );
             builder.Entity<Chatroom>().HasData(
-              new Chatroom { ChatroomId = 1, ChatroomName = "Chatroom Name 01", OwnerId = 1, Status = "Closed" },
-              new Chatroom { ChatroomId = 2, ChatroomName = "Chatroom Name 02", OwnerId = 1, Status = "Open" }
+              new Chatroom { ChatroomId = 1, ChatroomName = "Chatroom Name 01", Status = "Closed" },
+              new Chatroom { ChatroomId = 2, ChatroomName = "Chatroom Name 02", Status = "Open" }
+            );
+            builder.Entity<Role>().HasData(
+              new Role { RoleId = 1, RoleName = "admin" },
+              new Role { RoleId = 2, RoleName = "moderator" }
+            );
+            builder.Entity<UserRole>().HasData(
+              new UserRole { UserId = 1, RoleId = 1 },
+              new UserRole { UserId = 2, RoleId = 2 }
             );
         }
 

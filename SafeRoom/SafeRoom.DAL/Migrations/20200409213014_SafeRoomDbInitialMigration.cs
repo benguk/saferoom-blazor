@@ -7,6 +7,21 @@ namespace SafeRoom.DAL.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
+                name: "Chatrooms",
+                columns: table => new
+                {
+                    ChatroomId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    OwnerId = table.Column<int>(nullable: false),
+                    ChatroomName = table.Column<string>(maxLength: 128, nullable: false),
+                    Status = table.Column<string>(maxLength: 64, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Chatrooms", x => x.ChatroomId);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Roles",
                 columns: table => new
                 {
@@ -25,33 +40,11 @@ namespace SafeRoom.DAL.Migrations
                 {
                     UserId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Email = table.Column<string>(maxLength: 128, nullable: false),
-                    ChatroomId = table.Column<int>(nullable: true)
+                    Email = table.Column<string>(maxLength: 128, nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Users", x => x.UserId);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Chatrooms",
-                columns: table => new
-                {
-                    ChatroomId = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    OwnerId = table.Column<int>(nullable: false),
-                    ChatroomName = table.Column<string>(maxLength: 128, nullable: false),
-                    Status = table.Column<string>(maxLength: 64, nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Chatrooms", x => x.ChatroomId);
-                    table.ForeignKey(
-                        name: "FK_Chatrooms_Users_OwnerId",
-                        column: x => x.OwnerId,
-                        principalTable: "Users",
-                        principalColumn: "UserId",
-                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -79,29 +72,42 @@ namespace SafeRoom.DAL.Migrations
                 });
 
             migrationBuilder.InsertData(
-                table: "Users",
-                columns: new[] { "UserId", "ChatroomId", "Email" },
-                values: new object[] { 1, null, "Email01@test.com" });
-
-            migrationBuilder.InsertData(
-                table: "Users",
-                columns: new[] { "UserId", "ChatroomId", "Email" },
-                values: new object[] { 2, null, "Email02@test.com" });
-
-            migrationBuilder.InsertData(
                 table: "Chatrooms",
                 columns: new[] { "ChatroomId", "ChatroomName", "OwnerId", "Status" },
-                values: new object[] { 1, "Chatroom Name 01", 1, "Closed" });
+                values: new object[,]
+                {
+                    { 1, "Chatroom Name 01", 0, "Closed" },
+                    { 2, "Chatroom Name 02", 0, "Open" }
+                });
 
             migrationBuilder.InsertData(
-                table: "Chatrooms",
-                columns: new[] { "ChatroomId", "ChatroomName", "OwnerId", "Status" },
-                values: new object[] { 2, "Chatroom Name 02", 1, "Open" });
+                table: "Roles",
+                columns: new[] { "RoleId", "RoleName" },
+                values: new object[,]
+                {
+                    { 1, "admin" },
+                    { 2, "moderator" }
+                });
 
-            migrationBuilder.CreateIndex(
-                name: "IX_Chatrooms_OwnerId",
-                table: "Chatrooms",
-                column: "OwnerId");
+            migrationBuilder.InsertData(
+                table: "Users",
+                columns: new[] { "UserId", "Email" },
+                values: new object[,]
+                {
+                    { 1, "kenny@test.com" },
+                    { 2, "Email02@test.com" },
+                    { 3, "Email03@test.com" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "UserRole",
+                columns: new[] { "UserId", "RoleId" },
+                values: new object[] { 1, 1 });
+
+            migrationBuilder.InsertData(
+                table: "UserRole",
+                columns: new[] { "UserId", "RoleId" },
+                values: new object[] { 2, 2 });
 
             migrationBuilder.CreateIndex(
                 name: "IX_UserRole_RoleId",
@@ -109,30 +115,16 @@ namespace SafeRoom.DAL.Migrations
                 column: "RoleId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Users_ChatroomId",
-                table: "Users",
-                column: "ChatroomId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Users_Email",
                 table: "Users",
                 column: "Email",
                 unique: true);
-
-            migrationBuilder.AddForeignKey(
-                name: "FK_Users_Chatrooms_ChatroomId",
-                table: "Users",
-                column: "ChatroomId",
-                principalTable: "Chatrooms",
-                principalColumn: "ChatroomId",
-                onDelete: ReferentialAction.Restrict);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropForeignKey(
-                name: "FK_Chatrooms_Users_OwnerId",
-                table: "Chatrooms");
+            migrationBuilder.DropTable(
+                name: "Chatrooms");
 
             migrationBuilder.DropTable(
                 name: "UserRole");
@@ -142,9 +134,6 @@ namespace SafeRoom.DAL.Migrations
 
             migrationBuilder.DropTable(
                 name: "Users");
-
-            migrationBuilder.DropTable(
-                name: "Chatrooms");
         }
     }
 }

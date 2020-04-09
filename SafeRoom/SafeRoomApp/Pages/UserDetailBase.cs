@@ -39,8 +39,8 @@ namespace SafeRoomApp.Pages
         {
             Chatrooms = new List<Chatroom>()
             {
-                new Chatroom(){ ChatroomId = 1, OwnerId = 1, ChatroomName = "Discussion about potatoes", Status = "Expired" },
-                new Chatroom(){ ChatroomId = 2, OwnerId = 1, ChatroomName = "Let's talk about cheese", Status = "Open" },
+                new Chatroom(){ ChatroomId = 1, ChatroomName = "Discussion about potatoes", Status = "Expired" },
+                new Chatroom(){ ChatroomId = 2, ChatroomName = "Let's talk about cheese", Status = "Open" },
             };
         }
     }

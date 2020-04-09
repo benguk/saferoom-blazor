@@ -18,14 +18,34 @@ namespace SafeRoom.DAL
             _context.Database.SetCommandTimeout(3600);
         }
 
-        public async Task<IList<User>> GetUsersAsync(string userHash)
+        public async Task<IList<User>> GetUserByEmailAsync(string email)
         {
-            if (string.IsNullOrWhiteSpace(userHash))
+            if (string.IsNullOrWhiteSpace(email))
             {
-                throw new ArgumentNullException(nameof(userHash));
+                throw new ArgumentNullException(nameof(email));
             }
 
-            return null;
+            IQueryable<User> dbQuery = _context.Set<User>();
+            return await dbQuery.Where(a => a.Email.Equals(email, StringComparison.InvariantCultureIgnoreCase))
+                .ToListAsync();
+        }
+
+        public async Task<IList<User>> GetUsersAsync(int page, int limit)
+        {
+            if (page == 0)
+            {
+                page = 1;
+            }
+
+            if (limit == 0)
+            {
+                limit = int.MaxValue;
+            }
+
+            var skip = (page - 1) * limit;
+
+            IQueryable<User> dbQuery = _context.Set<User>();
+            return await dbQuery.Skip(skip).Take(limit).ToListAsync();
         }
     }
 }

@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Microsoft.Extensions.DependencyInjection;
+using SafeRoom.Business;
+using SafeRoom.Business.Entities;
 using SafeRoom.DAL;
 using SafeRoom.DAL.Entities;
 using System;
@@ -11,24 +13,14 @@ namespace SafeRoomApp.Pages
 {
     public class UsersOverviewBase : ComponentBase
     {
-        public IEnumerable<User> Users { get; set; }
+        [Inject]
+        protected UsersService UsersService { get; set; }
+        public IEnumerable<UserDto> Users { get; set; }
 
         protected override Task OnInitializedAsync()
         {
-            InitializeUsers();
-            
-            //var test = new ApplicationDbContext(); // TODO: Remove
-
+            Users = UsersService.GetUsersAsync().Result;
             return base.OnInitializedAsync();
-        }
-
-        private void InitializeUsers()
-        {
-            Users = new List<User>()
-            {
-                new User(){ UserId = 1, Email = "hash01" },
-                new User(){ UserId = 2, Email = "hash02" },
-            };
         }
     }
 }
