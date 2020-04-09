@@ -31,8 +31,8 @@ namespace SafeRoomApp.Pages
         {
             Users = new List<User>()
             {
-                new User(){ UserId = 1, UserHash = "hash01" },
-                new User(){ UserId = 2, UserHash = "hash02" },
+                new User(){ UserId = 1, Email = "hash01" },
+                new User(){ UserId = 2, Email = "hash02" },
             };
         }
         private void InitializeChatrooms()

@@ -1,6 +1,7 @@
 ﻿@page "/userdetail/{UserId}"
 @inherits UserDetailBase
 
+
 <h1 class="page-title">Details for User @User.UserId</h1>
 
 <div class="col-12 row">
@@ -34,11 +35,11 @@
                 <tbody>
                     @foreach (var chatroom in Chatrooms)
                     {
-                    <tr>
-                        <td>@chatroom.ChatroomId</td>
-                        <td>@chatroom.ChatroomName</td>
-                        <td>@chatroom.Status</td>
-                    </tr>
+                        <tr>
+                            <td>@chatroom.ChatroomId</td>
+                            <td>@chatroom.ChatroomName</td>
+                            <td>@chatroom.Status</td>
+                        </tr>
                     }
                 </tbody>
             </table>
