@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SafeRoom.Api", "SafeRoom.Ap
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SafeRoomApp.Server", "SafeRoomApp.Server\SafeRoomApp.Server.csproj", "{57CCC626-C1E8-4936-9683-CB1519331336}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SafeRoomApp.Client", "SafeRoomApp.Client\SafeRoomApp.Client.csproj", "{5F35E48D-9C08-4A67-A50E-BDFC0BB4F1FC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{57CCC626-C1E8-4936-9683-CB1519331336}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{57CCC626-C1E8-4936-9683-CB1519331336}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{57CCC626-C1E8-4936-9683-CB1519331336}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F35E48D-9C08-4A67-A50E-BDFC0BB4F1FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F35E48D-9C08-4A67-A50E-BDFC0BB4F1FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F35E48D-9C08-4A67-A50E-BDFC0BB4F1FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F35E48D-9C08-4A67-A50E-BDFC0BB4F1FC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
