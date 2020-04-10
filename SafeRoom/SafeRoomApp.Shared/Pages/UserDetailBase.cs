@@ -1,14 +1,11 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Microsoft.Extensions.Logging;
 using SafeRoom.Business.Models;
-using SafeRoom.DAL.Entities;
 using SafeRoomApp.Shared.Services;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
-namespace SafeRoomApp.Server.Pages
+namespace SafeRoomApp.Shared.Pages
 {
     public class UserDetailBase : ComponentBase
     {

@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using SafeRoomApp.Server.Data;
 using SafeRoomApp.Shared.Services;
 
 namespace SafeRoomApp.Server
@@ -24,7 +23,6 @@ namespace SafeRoomApp.Server
         {
             services.AddRazorPages();
             services.AddServerSideBlazor();
-            services.AddSingleton<WeatherForecastService>();
             services.AddLogging();
 
             // Do not forget to check SafeRoom.Api's Properties launchSettings.json for the right port...

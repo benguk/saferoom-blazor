@@ -5,7 +5,7 @@ using SafeRoomApp.Shared.Services;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace SafeRoomApp.Server.Pages
+namespace SafeRoomApp.Shared.Pages
 {
     public class UsersOverviewBase : ComponentBase
     {
