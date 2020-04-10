@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace SafeRoom.DAL
 {
+    // TODO: Check if deprecated...
     public class ApplicationDbContextFactory : IDesignTimeDbContextFactory<ApplicationDbContext>
     {
         public ApplicationDbContext CreateDbContext(string[] args)

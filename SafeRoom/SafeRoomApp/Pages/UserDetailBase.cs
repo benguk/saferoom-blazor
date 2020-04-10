@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Components;
+using Microsoft.Extensions.Logging;
 using SafeRoom.Business;
 using SafeRoom.Business.Entities;
+using SafeRoom.Business.Services;
 using SafeRoom.DAL.Entities;
 using System;
 using System.Collections.Generic;
@@ -12,9 +14,12 @@ namespace SafeRoomApp.Pages
     public class UserDetailBase : ComponentBase
     {
         [Inject]
-        protected ChatroomsService ChatroomsService { get; set;}
+        protected IChatroomDataService ChatroomDataService { get; set;}
         [Inject]
-        protected UsersService UsersService { get; set; }
+        protected IUserDataService UserDataService { get; set; }
+
+        [Inject]
+        protected ILogger<UserDetailBase> Logger { get; set; }
 
         [Parameter]
         public string UserId { get; set; }
@@ -22,12 +27,11 @@ namespace SafeRoomApp.Pages
         public UserDto User { get; set; } = new UserDto();
         public IEnumerable<ChatroomDto> Chatrooms { get; set; }
 
-        protected override Task OnInitializedAsync()
+        protected override async Task OnInitializedAsync()
         {
             var userId = int.Parse(UserId);
-            User = UsersService.GetUser(userId);
-            Chatrooms = ChatroomsService.GetUserChatrooms(userId);
-            return base.OnInitializedAsync();
+            User = await UserDataService.GetUser(userId);
+            Chatrooms = await ChatroomDataService.GetChatroomsOfUser(userId);
         }
     }
 }
