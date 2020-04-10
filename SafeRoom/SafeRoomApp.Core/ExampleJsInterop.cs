@@ -1,7 +1,7 @@
 using Microsoft.JSInterop;
 using System.Threading.Tasks;
 
-namespace SafeRoomApp.Shared
+namespace SafeRoomApp.Core
 {
     public class ExampleJsInterop
     {

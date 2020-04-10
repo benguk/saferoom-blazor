@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using SafeRoom.Business.Models;
 
-namespace SafeRoomApp.Shared.Services
+namespace SafeRoomApp.Core.Services
 {
     public interface IChatroomDataService
     {

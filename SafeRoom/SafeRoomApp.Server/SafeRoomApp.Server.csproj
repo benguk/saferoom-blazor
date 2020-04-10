@@ -19,7 +19,7 @@
   <ItemGroup>
     <ProjectReference Include="..\SafeRoom.Business\SafeRoom.Business.csproj" />
     <ProjectReference Include="..\SafeRoom.DAL\SafeRoom.DAL.csproj" />
-    <ProjectReference Include="..\SafeRoomApp.Shared\SafeRoomApp.Shared.csproj" />
+    <ProjectReference Include="..\SafeRoomApp.Shared\SafeRoomApp.Core.csproj" />
   </ItemGroup>
 
   <ItemGroup>

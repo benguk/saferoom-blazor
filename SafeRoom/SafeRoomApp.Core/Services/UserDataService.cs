@@ -6,7 +6,7 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace SafeRoomApp.Shared.Services
+namespace SafeRoomApp.Core.Services
 {
     public class UserDataService : IUserDataService
     {

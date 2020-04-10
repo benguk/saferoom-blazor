@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Components;
 
-namespace SafeRoomApp.Shared.Pages
+namespace SafeRoomApp.Core.Pages
 {
     public class ChatroomsOverviewBase : ComponentBase
     {
