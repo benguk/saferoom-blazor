@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace SafeRoom.Business.Extensions
+namespace SafeRoom.Api.Extensions
 {
     public static class UserExtension
     {

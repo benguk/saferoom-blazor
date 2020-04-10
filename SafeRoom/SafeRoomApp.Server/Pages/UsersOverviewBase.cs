@@ -1,14 +1,8 @@
 ﻿using Microsoft.AspNetCore.Components;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using SafeRoom.Business;
 using SafeRoom.Business.Models;
-using SafeRoom.Business.Services;
-using SafeRoom.DAL;
-using SafeRoom.DAL.Entities;
-using System;
+using SafeRoomApp.Shared.Services;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace SafeRoomApp.Server.Pages

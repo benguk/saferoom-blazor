@@ -5,13 +5,15 @@ VisualStudioVersion = 16.0.29424.173
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SafeRoom.DAL", "SafeRoom.DAL\SafeRoom.DAL.csproj", "{789804CE-BE7D-45E6-B0A5-05710152DF72}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SafeRoom.Business", "SafeRoom.Business\SafeRoom.Business.csproj", "{316C9801-C545-4466-B2C4-41BD566151BF}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SafeRoom.Api", "SafeRoom.Api\SafeRoom.Api.csproj", "{EFE044D5-E32F-4E64-A05B-752E5BB524AA}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SafeRoomApp.Server", "SafeRoomApp.Server\SafeRoomApp.Server.csproj", "{57CCC626-C1E8-4936-9683-CB1519331336}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SafeRoomApp.Client", "SafeRoomApp.Client\SafeRoomApp.Client.csproj", "{5F35E48D-9C08-4A67-A50E-BDFC0BB4F1FC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SafeRoomApp.Client", "SafeRoomApp.Client\SafeRoomApp.Client.csproj", "{5F35E48D-9C08-4A67-A50E-BDFC0BB4F1FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SafeRoom.Business", "SafeRoom.Business\SafeRoom.Business.csproj", "{7875FCB8-0B14-462F-AE8E-2C1FF15AD80D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SafeRoomApp.Shared", "SafeRoomApp.Shared\SafeRoomApp.Shared.csproj", "{A0602A69-0F39-418B-8001-D4D2BAF6831A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +25,6 @@ Global
 		{789804CE-BE7D-45E6-B0A5-05710152DF72}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{789804CE-BE7D-45E6-B0A5-05710152DF72}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{789804CE-BE7D-45E6-B0A5-05710152DF72}.Release|Any CPU.Build.0 = Release|Any CPU
-		{316C9801-C545-4466-B2C4-41BD566151BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{316C9801-C545-4466-B2C4-41BD566151BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{316C9801-C545-4466-B2C4-41BD566151BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{316C9801-C545-4466-B2C4-41BD566151BF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{EFE044D5-E32F-4E64-A05B-752E5BB524AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{EFE044D5-E32F-4E64-A05B-752E5BB524AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EFE044D5-E32F-4E64-A05B-752E5BB524AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -39,6 +37,14 @@ Global
 		{5F35E48D-9C08-4A67-A50E-BDFC0BB4F1FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5F35E48D-9C08-4A67-A50E-BDFC0BB4F1FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5F35E48D-9C08-4A67-A50E-BDFC0BB4F1FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7875FCB8-0B14-462F-AE8E-2C1FF15AD80D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7875FCB8-0B14-462F-AE8E-2C1FF15AD80D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7875FCB8-0B14-462F-AE8E-2C1FF15AD80D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7875FCB8-0B14-462F-AE8E-2C1FF15AD80D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0602A69-0F39-418B-8001-D4D2BAF6831A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0602A69-0F39-418B-8001-D4D2BAF6831A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0602A69-0F39-418B-8001-D4D2BAF6831A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0602A69-0F39-418B-8001-D4D2BAF6831A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

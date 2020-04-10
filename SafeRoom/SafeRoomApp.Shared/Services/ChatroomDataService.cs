@@ -6,7 +6,7 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace SafeRoom.Business.Services
+namespace SafeRoomApp.Shared.Services
 {
     public class ChatroomDataService : IChatroomDataService
     {
