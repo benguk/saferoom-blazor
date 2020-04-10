@@ -4,15 +4,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
-namespace SafeRoom.DAL
+namespace SafeRoom.DAL.Repositories
 {
-    public class SafeRoomRepository : ISafeRoomRepository
+    public class UserRepository : IUserRepository
     {
         private readonly ApplicationDbContext _context;
 
-        public SafeRoomRepository(ApplicationDbContext context)
+        public UserRepository(ApplicationDbContext context)
         {
             _context = context ?? throw new ArgumentNullException(nameof(context));
             _context.Database.SetCommandTimeout(3600);
@@ -44,20 +43,6 @@ namespace SafeRoom.DAL
         public IEnumerable<User> GetUsers()
         {
             return _context.Users.OrderBy(u => u.Email).ToList();
-        }
-
-        public IEnumerable<Chatroom> GetUserChatrooms(int userId)
-        {
-            var chatrooms = _context.Chatrooms
-                .Where(c => c.OwnerId.Equals(userId))
-                .ToList();
-
-            return chatrooms;
-        }
-
-        public IEnumerable<Chatroom> GetChatrooms()
-        {
-            return _context.Chatrooms.OrderBy(c => c.OwnerId).OrderBy(c => c.ChatroomName).ToList();
         }
     }
 }

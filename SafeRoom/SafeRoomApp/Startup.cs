@@ -11,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using SafeRoom.Business;
+using SafeRoom.Business.Services;
 using SafeRoom.DAL;
 using SafeRoomApp.Data;
 
@@ -32,11 +33,19 @@ namespace SafeRoomApp
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddSingleton<WeatherForecastService>();
-            services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-            services.AddScoped<ISafeRoomRepository, SafeRoomRepository>()
-                .AddTransient<UsersService>()
-                .AddTransient<ChatroomsService>();
+            services.AddLogging();
+
+            // Do not forget to check SafeRoom.Api's Properties launchSettings.json for the right port...
+            // Multiple Startup Projects as well and setup the Profile for Launch
+            // TODO: Use environment variable for base address or service discovery pattern
+            services.AddHttpClient<IUserDataService, UserDataService>(client =>
+            {
+                client.BaseAddress = new Uri("https://localhost:44309/");
+            });
+            services.AddHttpClient<IChatroomDataService, ChatroomDataService>(client =>
+            {
+                client.BaseAddress = new Uri("https://localhost:44309/");
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
