@@ -13,9 +13,9 @@ using Microsoft.Extensions.Hosting;
 using SafeRoom.Business;
 using SafeRoom.Business.Services;
 using SafeRoom.DAL;
-using SafeRoomApp.Data;
+using SafeRoomApp.Server.Data;
 
-namespace SafeRoomApp
+namespace SafeRoomApp.Server
 {
     public class Startup
     {

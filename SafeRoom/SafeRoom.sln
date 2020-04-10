@@ -5,11 +5,11 @@ VisualStudioVersion = 16.0.29424.173
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SafeRoom.DAL", "SafeRoom.DAL\SafeRoom.DAL.csproj", "{789804CE-BE7D-45E6-B0A5-05710152DF72}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SafeRoomApp", "SafeRoomApp\SafeRoomApp.csproj", "{7A9F695A-9004-4A91-99E0-9509C6353AC5}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SafeRoom.Business", "SafeRoom.Business\SafeRoom.Business.csproj", "{316C9801-C545-4466-B2C4-41BD566151BF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SafeRoom.Api", "SafeRoom.Api\SafeRoom.Api.csproj", "{EFE044D5-E32F-4E64-A05B-752E5BB524AA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SafeRoom.Api", "SafeRoom.Api\SafeRoom.Api.csproj", "{EFE044D5-E32F-4E64-A05B-752E5BB524AA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SafeRoomApp.Server", "SafeRoomApp.Server\SafeRoomApp.Server.csproj", "{57CCC626-C1E8-4936-9683-CB1519331336}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,10 +21,6 @@ Global
 		{789804CE-BE7D-45E6-B0A5-05710152DF72}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{789804CE-BE7D-45E6-B0A5-05710152DF72}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{789804CE-BE7D-45E6-B0A5-05710152DF72}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7A9F695A-9004-4A91-99E0-9509C6353AC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7A9F695A-9004-4A91-99E0-9509C6353AC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7A9F695A-9004-4A91-99E0-9509C6353AC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7A9F695A-9004-4A91-99E0-9509C6353AC5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{316C9801-C545-4466-B2C4-41BD566151BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{316C9801-C545-4466-B2C4-41BD566151BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{316C9801-C545-4466-B2C4-41BD566151BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -33,6 +29,10 @@ Global
 		{EFE044D5-E32F-4E64-A05B-752E5BB524AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EFE044D5-E32F-4E64-A05B-752E5BB524AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EFE044D5-E32F-4E64-A05B-752E5BB524AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57CCC626-C1E8-4936-9683-CB1519331336}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57CCC626-C1E8-4936-9683-CB1519331336}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57CCC626-C1E8-4936-9683-CB1519331336}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57CCC626-C1E8-4936-9683-CB1519331336}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

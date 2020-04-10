@@ -12,7 +12,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using SafeRoom.DAL;
 
-namespace SafeRoomApp
+namespace SafeRoomApp.Server
 {
     public class Program
     {

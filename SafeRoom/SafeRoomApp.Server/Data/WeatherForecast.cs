@@ -1,6 +1,6 @@
 using System;
 
-namespace SafeRoomApp.Data
+namespace SafeRoomApp.Server.Data
 {
     public class WeatherForecast
     {

@@ -2,7 +2,7 @@ using System;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace SafeRoomApp.Data
+namespace SafeRoomApp.Server.Data
 {
     public class WeatherForecastService
     {

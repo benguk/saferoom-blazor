@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace SafeRoomApp.Pages
+namespace SafeRoomApp.Server.Pages
 {
     public class ChatroomsOverviewBase : ComponentBase
     {
