@@ -5,6 +5,7 @@ using System.Text;
 
 namespace SafeRoom.DAL
 {
+    // TODO: Check if deprecated
     public class ConfigurationHelper
     {
         public static string GetCurrentSettings(string key)
