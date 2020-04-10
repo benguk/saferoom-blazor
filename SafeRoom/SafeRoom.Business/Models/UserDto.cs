@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SafeRoom.Business.Entities
+namespace SafeRoom.Business.Models
 {
     public class UserDto
     {

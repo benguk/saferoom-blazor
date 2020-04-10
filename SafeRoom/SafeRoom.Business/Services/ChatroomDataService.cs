@@ -1,4 +1,4 @@
-﻿using SafeRoom.Business.Entities;
+﻿using SafeRoom.Business.Models;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;

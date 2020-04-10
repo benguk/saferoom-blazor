@@ -2,7 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using SafeRoom.Business;
-using SafeRoom.Business.Entities;
+using SafeRoom.Business.Models;
 using SafeRoom.Business.Services;
 using SafeRoom.DAL;
 using SafeRoom.DAL.Entities;
