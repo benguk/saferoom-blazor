@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SafeRoom.DAL
 {
-    public class SafeRoomRepository
+    public class SafeRoomRepository : ISafeRoomRepository
     {
         private readonly ApplicationDbContext _context;
 
@@ -18,34 +18,46 @@ namespace SafeRoom.DAL
             _context.Database.SetCommandTimeout(3600);
         }
 
-        public async Task<IList<User>> GetUserByEmailAsync(string email)
+        public User GetUserByEmailAsync(string email)
         {
             if (string.IsNullOrWhiteSpace(email))
             {
                 throw new ArgumentNullException(nameof(email));
             }
 
-            IQueryable<User> dbQuery = _context.Set<User>();
-            return await dbQuery.Where(a => a.Email.Equals(email, StringComparison.InvariantCultureIgnoreCase))
-                .ToListAsync();
+            var user = _context.Users
+                .Where(u => u.Email.Equals(email, StringComparison.InvariantCultureIgnoreCase))
+                .FirstOrDefault();
+
+            return user;
         }
 
-        public async Task<IList<User>> GetUsersAsync(int page, int limit)
+        public User GetUser(int userId)
         {
-            if (page == 0)
-            {
-                page = 1;
-            }
+            var user = _context.Users
+                .Where(u => u.UserId.Equals(userId))
+                .FirstOrDefault();
 
-            if (limit == 0)
-            {
-                limit = int.MaxValue;
-            }
+            return user;
+        }
 
-            var skip = (page - 1) * limit;
+        public IEnumerable<User> GetUsers()
+        {
+            return _context.Users.OrderBy(u => u.Email).ToList();
+        }
 
-            IQueryable<User> dbQuery = _context.Set<User>();
-            return await dbQuery.Skip(skip).Take(limit).ToListAsync();
+        public IEnumerable<Chatroom> GetUserChatrooms(int userId)
+        {
+            var chatrooms = _context.Chatrooms
+                .Where(c => c.OwnerId.Equals(userId))
+                .ToList();
+
+            return chatrooms;
+        }
+
+        public IEnumerable<Chatroom> GetChatrooms()
+        {
+            return _context.Chatrooms.OrderBy(c => c.OwnerId).OrderBy(c => c.ChatroomName).ToList();
         }
     }
 }

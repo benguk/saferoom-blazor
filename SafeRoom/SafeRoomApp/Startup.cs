@@ -32,10 +32,11 @@ namespace SafeRoomApp
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddSingleton<WeatherForecastService>();
-            services.AddDbContext<ApplicationDbContext>(options => 
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")))
-                .AddTransient<SafeRoomRepository>()
-                .AddTransient<UsersService>();
+            services.AddDbContext<ApplicationDbContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddScoped<ISafeRoomRepository, SafeRoomRepository>()
+                .AddTransient<UsersService>()
+                .AddTransient<ChatroomsService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -19,7 +19,7 @@ namespace SafeRoomApp.Pages
 
         protected override Task OnInitializedAsync()
         {
-            Users = UsersService.GetUsersAsync().Result;
+            Users = UsersService.GetUsers();
             return base.OnInitializedAsync();
         }
     }

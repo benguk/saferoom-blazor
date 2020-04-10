@@ -5,13 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Migrations\20200409212016_SafeRoomDbInitialMigration.cs" />
-    <Compile Remove="Migrations\20200409212016_SafeRoomDbInitialMigration.Designer.cs" />
-    <Compile Remove="Migrations\20200409212334_SafeRoomDbMigrationTest.cs" />
-    <Compile Remove="Migrations\20200409212334_SafeRoomDbMigrationTest.Designer.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="3.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.0.0">
       <PrivateAssets>all</PrivateAssets>

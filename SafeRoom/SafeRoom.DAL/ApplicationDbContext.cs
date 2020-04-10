@@ -11,7 +11,6 @@ namespace SafeRoom.DAL
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
-            //Database.EnsureCreated();
         }
 
         // TODO: Remove // For testing purpose and create DB when running if not using Migration
@@ -47,8 +46,10 @@ namespace SafeRoom.DAL
               new User { UserId = 3, Email = "Email03@test.com" }
             );
             builder.Entity<Chatroom>().HasData(
-              new Chatroom { ChatroomId = 1, ChatroomName = "Chatroom Name 01", Status = "Closed" },
-              new Chatroom { ChatroomId = 2, ChatroomName = "Chatroom Name 02", Status = "Open" }
+              new Chatroom { ChatroomId = 1, OwnerId = 1, ChatroomName = "Chatroom Name 01", Status = "Closed" },
+              new Chatroom { ChatroomId = 2, OwnerId = 1, ChatroomName = "Chatroom Name 02", Status = "Open" },
+              new Chatroom { ChatroomId = 3, OwnerId = 2, ChatroomName = "Chatroom Name 03", Status = "Closed" },
+              new Chatroom { ChatroomId = 4, OwnerId = 3, ChatroomName = "Chatroom Name 04", Status = "Closed" }
             );
             builder.Entity<Role>().HasData(
               new Role { RoleId = 1, RoleName = "admin" },

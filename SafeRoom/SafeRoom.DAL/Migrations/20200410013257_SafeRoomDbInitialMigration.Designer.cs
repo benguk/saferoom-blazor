@@ -9,7 +9,7 @@ using SafeRoom.DAL;
 namespace SafeRoom.DAL.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20200409213014_SafeRoomDbInitialMigration")]
+    [Migration("20200410013257_SafeRoomDbInitialMigration")]
     partial class SafeRoomDbInitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -49,15 +49,29 @@ namespace SafeRoom.DAL.Migrations
                         {
                             ChatroomId = 1,
                             ChatroomName = "Chatroom Name 01",
-                            OwnerId = 0,
+                            OwnerId = 1,
                             Status = "Closed"
                         },
                         new
                         {
                             ChatroomId = 2,
                             ChatroomName = "Chatroom Name 02",
-                            OwnerId = 0,
+                            OwnerId = 1,
                             Status = "Open"
+                        },
+                        new
+                        {
+                            ChatroomId = 3,
+                            ChatroomName = "Chatroom Name 03",
+                            OwnerId = 2,
+                            Status = "Closed"
+                        },
+                        new
+                        {
+                            ChatroomId = 4,
+                            ChatroomName = "Chatroom Name 04",
+                            OwnerId = 3,
+                            Status = "Closed"
                         });
                 });
 

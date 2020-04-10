@@ -8,27 +8,27 @@ using System.Threading.Tasks;
 
 namespace SafeRoom.Business
 {
-    public class UsersService
+    public class ChatroomsService
     {
         private readonly ISafeRoomRepository _safeRoomRepository;
 
-        public UsersService(ISafeRoomRepository safeRoomRepository)
+        public ChatroomsService(ISafeRoomRepository safeRoomRepository)
         {
             _safeRoomRepository = safeRoomRepository ?? throw new ArgumentNullException(nameof(safeRoomRepository)); ;
         }
 
-        public IEnumerable<UserDto> GetUsers()
+        public IEnumerable<UserDto> GetChatrooms()
         {
             var users = _safeRoomRepository.GetUsers();
             var usersDto = users.Select(u => u.ToDto());
             return usersDto;
         }
 
-        public UserDto GetUser(int userId)
+        public IEnumerable<ChatroomDto> GetUserChatrooms(int userId)
         {
-            var user = _safeRoomRepository.GetUser(userId);
-            var userDto = user.ToDto();
-            return userDto;
+            var chatrooms = _safeRoomRepository.GetUserChatrooms(userId);
+            var chatroomsDto = chatrooms.Select(c => c.ToDto());
+            return chatroomsDto;
         }
     }
 }

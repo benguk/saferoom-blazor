@@ -76,8 +76,10 @@ namespace SafeRoom.DAL.Migrations
                 columns: new[] { "ChatroomId", "ChatroomName", "OwnerId", "Status" },
                 values: new object[,]
                 {
-                    { 1, "Chatroom Name 01", 0, "Closed" },
-                    { 2, "Chatroom Name 02", 0, "Open" }
+                    { 1, "Chatroom Name 01", 1, "Closed" },
+                    { 2, "Chatroom Name 02", 1, "Open" },
+                    { 3, "Chatroom Name 03", 2, "Closed" },
+                    { 4, "Chatroom Name 04", 3, "Closed" }
                 });
 
             migrationBuilder.InsertData(
