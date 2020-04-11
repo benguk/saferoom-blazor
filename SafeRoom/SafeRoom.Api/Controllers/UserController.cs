@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using SafeRoom.Api.Extensions;
 using SafeRoom.Business;
-using SafeRoom.Business.Extensions;
 using SafeRoom.DAL.Repositories;
 using System;
 using System.Collections.Generic;
