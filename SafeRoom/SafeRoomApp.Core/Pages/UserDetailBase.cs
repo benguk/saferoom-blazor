@@ -14,8 +14,8 @@ namespace SafeRoomApp.Core.Pages
         [Inject]
         protected IUserDataService UserDataService { get; set; }
 
-        [Inject]
-        protected ILogger<UserDetailBase> Logger { get; set; }
+        //[Inject]
+        //protected ILogger<UserDetailBase> Logger { get; set; }
 
         [Parameter]
         public string UserId { get; set; }

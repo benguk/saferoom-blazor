@@ -11,8 +11,8 @@ namespace SafeRoomApp.Core.Pages
     {
         [Inject]
         public IUserDataService UserDataService { get; set; }
-        [Inject]
-        public ILogger<UsersOverviewBase> Logger { get; set; }
+        //[Inject]
+        //public ILogger<UsersOverviewBase> Logger { get; set; }
         public IEnumerable<UserDto> Users { get; set; }
 
         protected override async Task OnInitializedAsync()

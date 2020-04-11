@@ -20,7 +20,6 @@ namespace SafeRoomApp.Core.Services
 
         public async Task<IEnumerable<UserDto>> GetUsers()
         {
-            var test = await _httpClient.GetStreamAsync(apiPath);
             return await JsonSerializer.DeserializeAsync<IEnumerable<UserDto>>
                 (await _httpClient.GetStreamAsync(apiPath), new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
         }
