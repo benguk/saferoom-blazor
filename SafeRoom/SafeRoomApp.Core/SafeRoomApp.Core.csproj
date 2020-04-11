@@ -16,11 +16,4 @@
     <ProjectReference Include="..\SafeRoom.Business\SafeRoom.Business.csproj" />
   </ItemGroup>
 
-
-  <ItemGroup>
-    <Content Update="_Imports.razor">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-    </Content>
-  </ItemGroup>
-
 </Project>
